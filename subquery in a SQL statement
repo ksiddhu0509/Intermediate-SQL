@@ -1,3 +1,14 @@
+subquery in a SQL statement
+A subquery, or nested query, is a query placed within another SQL query. When requesting information from a database, you may find it necessary to include a subquery into the SELECT, FROM , JOIN, or WHERE clause. However, you can also use subqueries when updating the database (i.e. in INSERT, UPDATE, and DELETE statements).
+
+There are several types of SQL subqueries:
+
+Scalar subqueries return a single value, or exactly one row and exactly one column.
+Multirow subqueries return either:
+One column with multiple rows (i.e. a list of values), or
+Multiple columns with multiple rows (i.e. tables).
+Correlated subqueries, where the inner query relies on information obtained from the outer query.
+
 SQL subqueries are a standard feature available in most relational database management systems (RDBMS)
 
 Suppose you have a database with two tables, "employees" and "departments," and you want to retrieve the names of employees in the "Sales" department. You can use a subquery like this:
