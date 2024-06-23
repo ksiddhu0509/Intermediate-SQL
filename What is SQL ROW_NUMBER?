@@ -1,0 +1,64 @@
+What is SQL ROW_NUMBER?
+SQL ROW_NUMBER is a window function that assigns a unique sequential integer to each row in a result set. This function is useful for ranking or identifying rows within a result set based on a specified order.
+
+When you would use it
+You would use the SQL ROW_NUMBER function when you want to:
+
+Rank rows: Assign a rank to each row in a result set based on one or more columns' values. For example, ranking products by sales performance.
+
+Paginate results: Implement pagination by numbering rows and selecting a specific range of rows from the result set, such as displaying the first 10 rows or the next 20 rows.
+
+Remove duplicates: Identify and eliminate duplicate rows by numbering them and selecting only the rows with a row number of 1.
+
+Assign unique identifiers: Generate unique identifiers or surrogate keys for rows when creating a new table or merging data from multiple sources.
+
+Syntax
+The basic syntax for using the SQL ROW_NUMBER function is as follows:
+
+SELECT
+    column1,
+    column2,
+    ...,
+    ROW_NUMBER() OVER (ORDER BY column_to_order) AS row_num
+FROM
+    your_table;
+column1, column2, ...: The columns you want to retrieve.
+ROW_NUMBER(): The window function that generates the row number.
+ORDER BY column_to_order: The column or columns by which you want to order the rows for numbering.
+row_num: The alias for the row number column.
+Parameter values
+column1, column2, ...: The columns you want to include in the result set.
+ORDER BY column_to_order: The column or columns used to determine the order in which rows are numbered.
+Example query
+Suppose you have a table "products" with columns "product_name" and "sales," and you want to rank products by their sales performance. You can use the ROW_NUMBER function like this:
+
+SELECT
+    product_name,
+    sales,
+    ROW_NUMBER() OVER (ORDER BY sales DESC) AS rank
+FROM
+    products;
+Example table response
+Assuming the "products" table contains data like this:
+
+| product_name | sales |
+| ------------ | ----- |
+| Product A    | 1200  |
+| Product B    | 900   |
+| Product C    | 1500  |
+| Product D    | 800   |
+The query mentioned earlier would return the following result:
+
+| product_name | sales | rank |
+| ------------ | ----- | ---- |
+| Product C    | 1500  | 1    |
+| Product A    | 1200  | 2    |
+| Product B    | 900   | 3    |
+| Product D    | 800   | 4    |
+This result ranks products by their sales performance in descending order.
+
+Use cases
+Ranking or ordering rows based on specific criteria.
+Implementing pagination to display a limited number of rows at a time.
+Identifying and removing duplicate rows.
+Generating unique identifiers or surrogate keys for data.
