@@ -1,0 +1,29 @@
+SQL subqueries are a standard feature available in most relational database management systems (RDBMS)
+
+Suppose you have a database with two tables, "employees" and "departments," and you want to retrieve the names of employees in the "Sales" department. You can use a subquery like this:
+SELECT column1, column2, ...
+FROM table
+WHERE column operator (SELECT column FROM another_table WHERE condition);
+
+SELECT employee_name
+FROM employees
+WHERE department_id = (SELECT department_id FROM departments WHERE department_name = 'Sales');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
