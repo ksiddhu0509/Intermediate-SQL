@@ -1,0 +1,40 @@
+What is SQL CREATE INDEX?
+The SQL CREATE INDEX statement is used to create an index on one or more columns of a table in a relational database. Indexes are data structures that improve the retrieval speed of records from a table by providing a quick lookup mechanism for specific columns.
+
+When you would use it
+You would use the CREATE INDEX statement in various scenarios, including:
+
+Query Optimization: To improve the performance of SELECT queries by allowing the database to quickly locate rows that meet specific criteria.
+
+Frequent Joins: When you often join tables on a specific column, creating an index on that column can significantly speed up join operations.
+
+Unique Constraints: To enforce uniqueness constraints on one or more columns, ensuring that duplicate values are not allowed.
+
+Large Datasets: In situations where you're dealing with large tables, indexes can dramatically reduce the time required for data retrieval.
+
+Syntax
+The syntax for the CREATE INDEX statement is as follows:
+
+CREATE [UNIQUE] INDEX index_name ON table_name (column1 [, column2, ...]);
+index_name: The name of the index you want to create. This must be unique within the database.
+table_name: The name of the table on which you want to create the index.
+column1, column2, ...: The column(s) for which you want to create the index. These are the columns used for quick data retrieval.
+Parameter values
+index_name: The name of the index to be created. This must be unique within the database.
+table_name: The name of the table on which you want to create the index.
+column1, column2, ...: The column(s) for which you want to create the index. These columns should be part of the table's schema.
+Example query
+Here's an example SQL query to create a non-unique index on the "last_name" column of a table named "employees":
+
+CREATE INDEX idx_last_name ON employees (last_name);
+Example table response
+The CREATE INDEX statement does not produce a table response. It is a Data Definition Language (DDL) command used to define an index on a table's columns. Upon successful execution, it defines the index structure but does not return data.
+
+Use cases
+Query Optimization: To improve the performance of SELECT queries by allowing the database to quickly locate rows that meet specific criteria.
+
+Frequent Joins: When you often join tables on a specific column, creating an index on that column can significantly speed up join operations.
+
+Unique Constraints: To enforce uniqueness constraints on one or more columns, ensuring that duplicate values are not allowed.
+
+Large Datasets: In situations where you're dealing with large tables, indexes can dramatically reduce the time required for data retrieval.
